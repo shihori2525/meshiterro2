@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permiteed_parameters,if: :devise_controller?
 
+  def after_sigin_in_path_for(resource)
+    post_images_path
+  end
+
   protected
 
   def configure_permiteed_parameters
