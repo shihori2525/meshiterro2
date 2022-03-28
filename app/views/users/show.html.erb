@@ -1,6 +1,9 @@
 <div>
   <h3><%= @user.name %></h3>
   <%= image_tag('sample-author1.jpg') %>
+  <% if @user == current_user %>
+    <p><%= link_to ""プロフィール編集,edit_user_path(@user) %></p>
+  <% end %>
 </div>
 
 <% @post_images.each do |post_image| %>
